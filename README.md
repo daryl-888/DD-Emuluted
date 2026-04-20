@@ -1,6 +1,6 @@
 # Virtual 8bit Machine Group Project
 
-We will be creating an emulator that can decode roma into something playable. It will simulate an 8bit chip and emulating a CPU, memory, and manipulate the sound visual instructions.
+We will be creating an emulator that can decode roms into something playable. It will simulate an 8bit chip and emulating a CPU, memory, and manipulate the sound visual instructions.
 
 ## Getting started
 
