@@ -23,6 +23,9 @@ We will be creating an emulator that can decode roma into something playable. It
 
 ## Relevant links
 
+- [CHIP-8 Resources](https://chip-8.github.io/links/)
+
 ## References
 
 - [Building a CHIP-8 Emulator](https://austinmorlan.com/posts/chip8_emulator/)
+- [Guide to making a CHIP-8 Emulator](https://tobiasvl.github.io/blog/write-a-chip-8-emulator/)
