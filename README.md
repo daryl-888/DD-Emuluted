@@ -11,13 +11,13 @@ We will be creating an emulator that can decode roms into something playable. It
 
 ### Roles
 
-#### Person 1 — CPU / Opcodes
+#### Person 1 — CPU / Opcodes (Daryl)
 Responsible for the core of the emulator. This includes implementing the fetch-decode-execute cycle, all ~35 CHIP-8 instructions, registers, the program counter, and the stack. Every other component depends on this working correctly.
 
-#### Person 2 — Display / Input
+#### Person 2 — Display / Input ()
 Responsible for rendering the 64x32 pixel framebuffer using SDL2 and mapping the host keyboard to CHIP-8's 16-key hex keypad. Works closely with the CPU role to handle draw instructions.
 
-#### Person 3 — Memory / Audio / Integration
+#### Person 3 — Memory / Audio / Integration ()
 Responsible for the 4KB memory map, loading ROM files, storing the built-in font sprites, and implementing the sound timer beep via SDL2. Also owns `main.cpp` and is responsible for connecting all components into a working program.
 
 ---
