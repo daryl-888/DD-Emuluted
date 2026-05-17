@@ -1,0 +1,1 @@
+//set chip8 function pointer table
