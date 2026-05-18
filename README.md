@@ -1,26 +1,24 @@
-# Virtual 8bit Machine Group Project
+# DD Emulated — CHIP-8 Emulator
 
-We will be creating an emulator that can decode roms into something playable. It will simulate an 8bit chip and emulating a CPU, memory, and manipulate the sound visual instructions.
+A CHIP-8 emulator written in C++ with SDL2. Emulates the full CHIP-8 instruction set (35 opcodes) including display, keyboard input, delay/sound timers, and ROM loading.
 
-## Getting started
+## Prerequisites
 
-### Prerequisites
-
-- [Visual Studio Code](https://code.visualstudio.com/download)
-- [Git](https://git-scm.com/)
 - [CMake](https://cmake.org/) 3.16+
 - [SDL2](https://www.libsdl.org/) development libraries
   - Ubuntu/Debian: `sudo apt install libsdl2-dev`
   - Arch: `sudo pacman -S sdl2`
+  - macOS: `brew install sdl2`
+  - Windows (vcpkg): `vcpkg install sdl2`
 
-### Building
+## Building
 
 ```sh
 cmake -B build
 cmake --build build
 ```
 
-### Running a ROM
+## Running a ROM
 
 ```sh
 ./build/DD_Emulated <Scale> <Delay> <ROM>
@@ -38,7 +36,7 @@ ROMs with spaces in the filename must be quoted:
 ./build/DD_Emulated 10 2 "roms/Tetris [Fran Dachille, 1991].ch8"
 ```
 
-### Key Mapping
+## Key Mapping
 
 | CHIP-8 Key | Keyboard |
 | --- | --- |
@@ -49,33 +47,36 @@ ROMs with spaces in the filename must be quoted:
 | C–F | 4, R, F, V |
 | Quit | ESC |
 
----
+## Included ROMs
 
-### Roles
+| File | Description |
+| --- | --- |
+| `ibm_logo.ch8` | IBM logo display test |
+| `petdog.ch8` | Pet dog demo |
+| `Tetris [Fran Dachille, 1991].ch8` | Tetris |
 
-#### Person 1 — CPU / Opcodes (Daryl)
-Responsible for the core of the emulator. This includes implementing the fetch-decode-execute cycle, all ~35 CHIP-8 instructions, registers, the program counter, and the stack. Every other component depends on this working correctly.
+## Project Structure
 
-#### Person 2 — Display / Input (Jimmy)
-Responsible for rendering the 64x32 pixel framebuffer using SDL2 and mapping the host keyboard to CHIP-8's 16-key hex keypad. Works closely with the CPU role to handle draw instructions.
-
-#### Person 3 — Memory / Audio / Integration (Michael)
-Responsible for the 4KB memory map, loading ROM files, storing the built-in font sprites, and implementing the sound timer beep via SDL2. Also owns `main.cpp` and is responsible for connecting all components into a working program.
-
----
-
-> **Note:** All three roles share a common `Chip8` struct. Must agree on struct
-
-### Setting up your workspace
-
-> [!Warning]
-> Make sure to never force push into main branches.
-
-## Relevant links
-
-- [CHIP-8 Resources](https://chip-8.github.io/links/)
+```text
+├── main.cpp                  # Entry point and main loop
+├── include/chip8.h           # Chip8 class definition
+├── src/
+│   ├── cpu/
+│   │   ├── cpu.cpp           # CPU init and opcode dispatch tables
+│   │   └── opcodes.cpp       # All 35 CHIP-8 instruction implementations
+│   ├── display/
+│   │   ├── renderer.cpp      # SDL2 window and framebuffer rendering
+│   │   └── input.cpp         # Keyboard input mapping
+│   └── system/
+│       ├── memory.h          # Memory constants and fontset
+│       ├── rom_loader.cpp    # ROM file loading
+│       ├── timers.cpp        # CPU cycle, delay/sound timers
+│       └── audio.cpp         # Audio (sound timer)
+└── roms/                     # Sample ROM files
+```
 
 ## References
 
 - [Building a CHIP-8 Emulator](https://austinmorlan.com/posts/chip8_emulator/)
 - [Guide to making a CHIP-8 Emulator](https://tobiasvl.github.io/blog/write-a-chip-8-emulator/)
+- [CHIP-8 Resources](https://chip-8.github.io/links/)

@@ -1,1 +1,13 @@
 chip8_project_v2.md
+
+# CMake build directories
+build/
+cmake-build-*/
+out/
+
+# Compiled binaries
+*.o
+*.a
+*.so
+*.exe
+DD_Emulated
