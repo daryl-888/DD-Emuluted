@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 //set chip8 function pointer table
 #include "../../include/chip8.h"
 #include "/home/daryl/Projects/DungeonDwellers/DD-emulator/DD-Emuluted/src/system/memory.h"
@@ -26,4 +24,3 @@ Chip8::Chip8()
 
 
 }
->>>>>>> Stashed changes
