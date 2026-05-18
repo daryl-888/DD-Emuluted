@@ -1,6 +1,7 @@
 // rom loader
-#include <cstdint>
-#include "chip8.h"
+#include <fstream>
+#include "../../include/chip8.h"
+#include "memory.h"
 
 void Chip8::LoadROM(char const* filename) {
 
@@ -11,7 +12,7 @@ void Chip8::LoadROM(char const* filename) {
         std::streampos size = file.tellg();
         char* buffer = new char[size];
 
-        file.seeking(0, std::ios::beg);
+        file.seekg(0, std::ios::beg);
         file.read(buffer,size);
         file.close();
 

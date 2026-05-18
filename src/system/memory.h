@@ -1,5 +1,5 @@
+#pragma once
 #include <cstdint>
-#include "/home/daryl/Projects/DungeonDwellers/DD-emulator/DD-Emuluted/include/chip8.h"
 
 
 
@@ -8,7 +8,7 @@ const unsigned int FONTSET_START_ADDRESS = 0x50;
 const unsigned int START_ADDRESS = 0x200;
 
 
-uint8_t fontset[FONTSET_SIZE] =
+static uint8_t fontset[FONTSET_SIZE] =
 	{
 		 0xF0,  0x90,  0x90,  0x90,  0xF0, // 0
 		 0x20,  0x60,  0x20,  0x20,  0x70, // 1

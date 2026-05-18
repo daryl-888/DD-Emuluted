@@ -4,10 +4,52 @@ We will be creating an emulator that can decode roms into something playable. It
 
 ## Getting started
 
-### Prerequisites 
+### Prerequisites
 
 - [Visual Studio Code](https://code.visualstudio.com/download)
 - [Git](https://git-scm.com/)
+- [CMake](https://cmake.org/) 3.16+
+- [SDL2](https://www.libsdl.org/) development libraries
+  - Ubuntu/Debian: `sudo apt install libsdl2-dev`
+  - Arch: `sudo pacman -S sdl2`
+
+### Building
+
+```sh
+cmake -B build
+cmake --build build
+```
+
+### Running a ROM
+
+```sh
+./build/DD_Emulated <Scale> <Delay> <ROM>
+```
+
+| Argument | Description | Example |
+| --- | --- | --- |
+| Scale | Window scale factor | `10` (640×320 window) |
+| Delay | Cycle delay in milliseconds | `2` |
+| ROM | Path to `.ch8` ROM file | `roms/ibm_logo.ch8` |
+
+ROMs with spaces in the filename must be quoted:
+
+```sh
+./build/DD_Emulated 10 2 "roms/Tetris [Fran Dachille, 1991].ch8"
+```
+
+### Key Mapping
+
+| CHIP-8 Key | Keyboard |
+| --- | --- |
+| 0 | X |
+| 1–3 | 1, 2, 3 |
+| 4–7 | Q, W, E, A |
+| 8–B | S, D, Z, C |
+| C–F | 4, R, F, V |
+| Quit | ESC |
+
+---
 
 ### Roles
 

@@ -1,11 +1,11 @@
 //include all opcodes
 #include "../../include/chip8.h"
-#include "/home/daryl/Projects/DungeonDwellers/DD-emulator/DD-Emuluted/src/system/memory.h"
+#include "../system/memory.h"
 #include <cstdint>
 #include <cstring>
 
 // Do nothing
-void OP_NULL();
+void Chip8::OP_NULL() {}
 
 // CLS
 void Chip8::OP_00E0()

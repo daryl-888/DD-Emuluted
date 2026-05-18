@@ -1,6 +1,6 @@
 //set chip8 function pointer table
 #include "../../include/chip8.h"
-#include "/home/daryl/Projects/DungeonDwellers/DD-emulator/DD-Emuluted/src/system/memory.h"
+#include "../system/memory.h"
 
 #include <random>
 #include <chrono>
@@ -74,10 +74,6 @@ Chip8::Chip8()
 	tableF[0x55] = &Chip8::OP_Fx55;
 	tableF[0x65] = &Chip8::OP_Fx65;
 
-
-
-    std::default_random_engine randGen;
-    std::uniform_int_distribution<uint8_t> randByte;
 
 
 }
