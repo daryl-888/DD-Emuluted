@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/jimmy/DD-Emuluted",
-      "program": "c:/Users/jimmy/DD-Emuluted/build/Debug/outDebug",
+      "cwd": "c:/Users/micha/DD-Emuluted",
+      "program": "c:/Users/micha/DD-Emuluted/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
